@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% load static %} 
+{% block page_head %}
+<title>r/place Analysis</title>
+<link rel="icon" href="{% static 'rplace/favicon.ico' %}" />
+<link rel="stylesheet" href="{% static 'rplace/css/rplace.css' %}" />
+{% endblock %} 
+{% block page_header %}
+<div class="r-header">
+    <h1 class="title-name">r/place Analysis</h1>
+</div>
+{% endblock %} {% block page_content %}
+<div class="r-section">
+    <canvas id="rCanvas" width="1000" height="1000"></canvas>
+    <div class="r-durations">
+        <div id="background"></div>
+        <input type="range" id="durationRange" name="durrange" min="1" max="4320" value="1">
+        <div class="r-statistics">
+            <output for="durrange" id="durRangeOutput"></output>
+            <div class="r-stat" id="lastMinPlaced"></div>
+            <div class="r-stat" id="totalPlaced"></div>
+            <div class="r-stat" id="colorMostLastPlaced"></div>
+            <div class="r-stat" id="meanLastColor"></div>
+            <div class="r-stat" id="colorMostPlacedTotal"></div>
+            <div class="r-stat" id="meanColorTotal"></div>
+        </div>
+    </div>
+    <div class="r-actions">
+        <button class="r-button fas fa-redo" id="rangeDec"></button>
+        <button class="r-button fas fa-angle-right" id="rangeInc"></button>
+        <!-- <button class="r-button fas fa-play" id="playToEnd"></button> -->
+    </div>
+</div>
+{% endblock %}
+{% block page_scripts %}
+<script type="text/javascript" src="{% static 'rplace/js/rplace.js' %}"></script>
+{% endblock %}

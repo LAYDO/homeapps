@@ -1,0 +1,40 @@
+.jwst-header {
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.title-name {
+    line-height: 1;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+}
+
+
+.jwst-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 100%; */
+}
+
+.jwst-col-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.jwst-row-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#jwstInfo {
+    font-size: 0.75rem;
+    overflow-y: auto;
+}

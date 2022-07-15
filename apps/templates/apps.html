@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Laydo Apps</title>
+    <link rel="stylesheet" href="{% static 'apps/css/apps.css' %}" />
+    <link rel="icon" href="{% static 'favicon.ico' %}" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    {% block page_head %}{% endblock %}
+  </head>
+  <body>
+    <div class="apps-space">
+        <div class="app-claim">
+            <button class="app-button" id="iss" onclick="redirect(event)"></button>
+            <h3 class="app-title">Track ISS</h3>
+        </div>
+        <div class="app-claim">
+            <button class="app-button" id="jwst" onclick="redirect(event)"></button>
+            <h3 class="app-title">JWST</h3>
+        </div>
+        <div class="app-claim">
+            <button class="app-button" id="rplace" onclick="redirect(event)"></button>
+            <h3 class="app-title">r/place</h3>
+        </div>
+        <div class="app-claim">
+            <button class="app-button" id="allergies" onclick="redirect(event)"></button>
+            <h3 class="app-title">Apollo's Allergies</h3>
+        </div>
+        <div class="app-claim">
+            <button class="app-button" id="happybday" onclick="redirect(event)"></button>
+            <h3 class="app-title">Happy Birthday!</h3>
+        </div>
+    </div>
+    <div class="apps-footer">
+      Developed by
+      <a href="https://www.laydo.net/" target="__blank">Laydo Net</a>
+    </div>
+    <script type="text/javascript" src="{% static 'apps/js/apps.js' %}"></script>
+    {% block page_scripts %} {% endblock %}
+  </body>
+</html>

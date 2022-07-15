@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'base/css/base.css' %}" />
+    <link rel="icon" href="{% static 'favicon.ico' %}" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    {% block page_head %}{% endblock %}
+  </head>
+  <body>
+    <div class="base-header">
+      <div class="base-button fas fa-arrow-left" onclick="back()"></div>
+      {% block page_header %} {% endblock %}
+    </div>
+    {% block page_content %}{% endblock %}
+    <div class="base-footer">
+      <a href="https://www.laydo.net/" target="__blank">Laydo Net</a>
+    </div>
+    <script type="text/javascript" src="{% static 'base/js/base.js' %}"></script>
+    {% block page_scripts %} {% endblock %}
+  </body>
+</html>

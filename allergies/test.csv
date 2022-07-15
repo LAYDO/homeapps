@@ -1,0 +1,287 @@
+level,category,food
+LEVEL 2,Dairy,Cheese (american)
+LEVEL 0,Dairy,Cheese (cheddar)
+LEVEL 0,Dairy,Cheese (cottage)
+LEVEL 3,Dairy,Cheese (swiss)
+LEVEL 3,Dairy,Milk (cow)
+LEVEL 2,Dairy,Milk (goat)
+LEVEL 3,Dairy,Yogurt (plain Greek)
+LEVEL 1,Dairy,Yogurt (plain)
+LEVEL 3,Fat,Almond Oil
+LEVEL 0,Fat,Beef Fat
+LEVEL 1,Fat,Canola Oil
+LEVEL 3,Fat,Chicken Fat
+LEVEL 3,Fat,Coconut Oil
+LEVEL 3,Fat,Cod Liver Oil
+LEVEL 2,Fat,Hemp Seed Oil
+LEVEL 3,Fat,Herring Oil
+LEVEL 0,Fat,Olive Oil
+LEVEL 0,Fat,Pork Fat
+LEVEL 1,Fat,Salmon Oil
+LEVEL 2,Fat,Sardine Oil
+LEVEL 3,Fat,Sesame Oil
+LEVEL 0,Fat,Soybean Oil
+LEVEL 2,Fruit,Strawberries
+LEVEL 3,Fruit,Tomato Pomace
+LEVEL 2,Fruit,Watermelons
+LEVEL 1,Grain,Barley
+LEVEL 0,Grain,Brewers Rice
+LEVEL 0,Grain,Corn Meal
+LEVEL 0,Grain,Flaxseed
+LEVEL 3,Grain,Ground Yellow Corn
+LEVEL 1,Grain,Millet
+LEVEL 3,Grain,Oat
+LEVEL 0,Grain,Oat Groats
+LEVEL 3,Grain,Pearled Barley
+LEVEL 0,Grain,Quinoa
+LEVEL 2,Grain,Quinoa Powder
+LEVEL 3,Grain,Rice (brown)
+LEVEL 1,Grain,Rice (white)
+LEVEL 2,Grain,Rice Bran
+LEVEL 2,Grain,Rice Flour
+LEVEL 3,Grain,Rye
+LEVEL 3,Grain,Soy Flour
+LEVEL 2,Grain,Soy Grits
+LEVEL 0,Grain,Wheat Flour
+LEVEL 2,Misc,Tapioca Starch
+LEVEL 0,Misc,Vinegar (apple cider)
+LEVEL 2,Misc,Yeast
+LEVEL 0,Misc,Yeast Culture
+LEVEL 3,Misc,Yucca Schidigera Extract
+LEVEL 2,Nuts,Almond
+LEVEL 0,Nuts,Cashew Nuts
+LEVEL 2,Nuts,Peanut Butter
+LEVEL 0,Nuts,Peanuts
+LEVEL 0,Nuts,Sunflower Seeds
+LEVEL 2,Protein,Alfalfa Meal Concentrate
+LEVEL 0,Protein,Alfalfa Nutrient Concentrate
+LEVEL 0,Protein,Alligator
+LEVEL 0,Protein,Alligator Meal
+LEVEL 1,Protein,Bacon
+LEVEL 3,Protein,Beef
+LEVEL 3,Protein,Beef Broth
+LEVEL 2,Protein,Beef Heart
+LEVEL 2,Protein,Beef Hide
+LEVEL 0,Protein,Beef Jerky
+LEVEL 0,Protein,Beef Kidney
+LEVEL 2,Protein,Beef Liver
+LEVEL 3,Protein,Elk
+LEVEL 0,Protein,Goat
+LEVEL 0,Protein,Goose
+LEVEL 1,Protein,Kangaroo
+LEVEL 3,Protein,Lamb
+LEVEL 2,Protein,Lamb Meal
+LEVEL 3,Protein,Pea Protein
+LEVEL 0,Protein,Pheasant
+LEVEL 0,Protein,Pheasant Gizzard
+LEVEL 0,Protein,Pheasant Heart
+LEVEL 0,Protein,Pheasant Liver
+LEVEL 1,Protein,Pork
+LEVEL 2,Protein,Pork Heart
+LEVEL 0,Protein,Pork Kidney
+LEVEL 0,Protein,Pork Liver
+LEVEL 0,Protein,Pork Meal
+LEVEL 0,Protein,Pork Skins
+LEVEL 3,Protein,Quail
+LEVEL 3,Protein,Rabbit
+LEVEL 0,Protein,Rabbit Heart
+LEVEL 1,Protein,Rabbit Liver
+LEVEL 0,Protein,Rabbit Meal
+LEVEL 2,Seafood,Lobster
+LEVEL 0,Seafood,Mackerel
+LEVEL 0,Seafood,Menhaden Fish Meal
+LEVEL 0,Seafood,Mussels
+LEVEL 1,Seafood,Ocean Fish Meal
+LEVEL 0,Seafood,Oyster
+LEVEL 1,Seafood,Salmon
+LEVEL 1,Seafood,Salmon Meal
+LEVEL 3,Seafood,Sardine
+LEVEL 2,Seafood,Sardine Meal
+LEVEL 0,Seafood,Sea Bass
+LEVEL 0,Seafood,Shrimp
+LEVEL 3,Seafood,Sole
+LEVEL 2,Seafood,Tilapia
+LEVEL 2,Seafood,Trout
+LEVEL 3,Seafood,Tuna
+LEVEL 2,Seafood,Whitefish Meal
+LEVEL 1,Spice,Basil
+LEVEL 2,Spice,Cilantro
+LEVEL 1,Spice,Fenugreek Seed
+LEVEL 2,Spice,Ginger
+LEVEL 1,Spice,Oregano Powder
+LEVEL 0,Synthetic Additive,Citric Acid
+LEVEL 0,Synthetic Additive,Copper Sulfate
+LEVEL 1,Synthetic Additive,Dicalcium Phosphate
+LEVEL 1,Synthetic Additive,Ferrous Sulfate
+LEVEL 0,Synthetic Additive,Folic Acid
+LEVEL 0,Synthetic Additive,Glucosamine Hydrochloride
+LEVEL 2,Synthetic Additive,Guar Gum
+LEVEL 0,Synthetic Additive,Inositol
+LEVEL 0,Synthetic Additive,Inulin
+LEVEL 0,Synthetic Additive,Lecithins
+LEVEL 0,Synthetic Additive,Manganese Proteinate
+LEVEL 0,Synthetic Additive,Manganese Sulfate
+LEVEL 0,Synthetic Additive,Niacin
+LEVEL 1,Synthetic Additive,Omega 3 Fatty Acid
+LEVEL 2,Synthetic Additive,Phosphoric Acid
+LEVEL 0,Synthetic Additive,Potassium Chloride
+LEVEL 3,Synthetic Additive,Pyridoxine Hydrochloride
+LEVEL 3,Synthetic Additive,Riboflavin
+LEVEL 0,Synthetic Additive,Sodium Chloride
+LEVEL 1,Synthetic Additive,Sodium Selenate
+LEVEL 3,Synthetic Additive,Soy Lecithin
+LEVEL 1,Synthetic Additive,Taurine
+LEVEL 2,Veg,Greens (collard)
+LEVEL 3,Veg,Lentils
+LEVEL 0,Veg,Peas
+LEVEL 0,Veg,Potato (yellow)
+LEVEL 0,Veg,Potatoes (sweet)
+LEVEL 3,Veg,Potatoes (white)
+LEVEL 2,Veg,Greens (collard)
+LEVEL 3,Veg,Lentils
+LEVEL 0,Veg,Peas
+LEVEL 0,Veg,Potato (yellow)
+LEVEL 0,Veg,Potatoes (sweet)
+LEVEL 3,Veg,Potatoes (white)
+LEVEL 0,Fat,Sunflower Oil
+LEVEL 1,Fat,Vegetable Oil
+LEVEL 0,Food Dye,Blue #1
+LEVEL 2,Food Dye,Blue #2
+LEVEL 0,Food Dye,Caramel Color
+LEVEL 3,Food Dye,Red #40
+LEVEL 0,Food Dye,Yellow #5
+LEVEL 2,Food Dye,Yellow #6
+LEVEL 1,Fruit,Apple
+LEVEL 0,Fruit,Bananas
+LEVEL 0,Fruit,Blueberries
+LEVEL 2,Fruit,Cantaloupe
+LEVEL 3,Fruit,Cranberries
+LEVEL 0,Fruit,Figs
+LEVEL 0,Fruit,Honeydew Melon
+LEVEL 3,Fruit,Kiwis
+LEVEL 3,Fruit,Mango
+LEVEL 0,Fruit,Oranges
+LEVEL 0,Fruit,Peaches
+LEVEL 3,Fruit,Pears
+LEVEL 1,Fruit,Pineapples
+LEVEL 1,Fruit,Raspberries
+LEVEL 3,Grain,Wheat Gluten
+LEVEL 3,Grain,Wheat Middlings
+LEVEL 2,Grain,Whole Grain Sorghum
+LEVEL 3,Misc,Alfalfa
+LEVEL 1,Misc,Alfalfa (dehydrated)
+LEVEL 0,Misc,Barley Grass
+LEVEL 0,Misc,Bee Pollen
+LEVEL 0,Misc,Brewers Yeast
+LEVEL 0,Misc,Catnip
+LEVEL 2,Misc,Chia Seeds
+LEVEL 3,Misc,Chlorella
+LEVEL 2,Misc,Gelatin
+LEVEL 0,Misc,Hemp
+LEVEL 2,Misc,Kelp
+LEVEL 1,Misc,Lactobacillus Acidophilus
+LEVEL 0,Misc,Pea Fiber
+LEVEL 1,Misc,Potato Flour
+LEVEL 2,Misc,Potato Starch
+LEVEL 1,Misc,Powdered Cellulose
+LEVEL 2,Misc,Psyllium Seed Husk
+LEVEL 1,Misc,Spirulina
+LEVEL 1,Misc,Tapioca
+LEVEL 2,Protein,Beef Meal
+LEVEL 3,Protein,Beef Tallow
+LEVEL 1,Protein,Bison
+LEVEL 2,Protein,Bison Meal
+LEVEL 0,Protein,Bone Meal
+LEVEL 0,Protein,Canola Meal
+LEVEL 2,Protein,Chicken
+LEVEL 0,Protein,Chicken Broth
+LEVEL 1,Protein,Chicken By Product
+LEVEL 1,Protein,Chicken Heart
+LEVEL 3,Protein,Chicken Liver
+LEVEL 1,Protein,Chicken Meal
+LEVEL 0,Protein,Duck
+LEVEL 1,Protein,Duck Gizzard
+LEVEL 0,Protein,Duck Liver
+LEVEL 1,Protein,Duck Meal
+LEVEL 3,Protein,Egg White (chicken)
+LEVEL 2,Protein,Egg White (duck)
+LEVEL 0,Protein,Egg White (quail)
+LEVEL 1,Protein,Egg Yolk (chicken)
+LEVEL 1,Protein,Egg Yolk (duck)
+LEVEL 0,Protein,Egg Yolk (quail)
+LEVEL 0,Protein,Soy Protein Concentrate
+LEVEL 0,Protein,Soy Protein Isolate
+LEVEL 2,Protein,Soybean Meal
+LEVEL 0,Protein,Turkey
+LEVEL 1,Protein,Turkey Broth
+LEVEL 2,Protein,Turkey Gizzard
+LEVEL 2,Protein,Turkey Heart
+LEVEL 0,Protein,Turkey Liver
+LEVEL 1,Protein,Turkey Meal
+LEVEL 0,Protein,Veal
+LEVEL 0,Protein,Venison
+LEVEL 2,Protein,Venison Meal
+LEVEL 2,Seafood,Anchovy
+LEVEL 3,Seafood,Anchovy Meal
+LEVEL 0,Seafood,Catfish
+LEVEL 0,Seafood,Catfish Meal
+LEVEL 0,Seafood,Crab
+LEVEL 0,Seafood,Fish Broth
+LEVEL 0,Seafood,Fish Meal
+LEVEL 0,Seafood,Halibut
+LEVEL 2,Seafood,Herring
+LEVEL 0,Seafood,Herring Meal
+LEVEL 2,Spice,Parsley
+LEVEL 2,Spice,Parsley Flakes
+LEVEL 2,Spice,Rosemary
+LEVEL 0,Spice,Rosemary Extract
+LEVEL 2,Spice,Sage
+LEVEL 3,Spice,Thyme
+LEVEL 0,Spice,Turmeric
+LEVEL 0,Sweetener,High Fructose Corn Syrup
+LEVEL 3,Sweetener,Honey
+LEVEL 0,Sweetener,Sucrose
+LEVEL 3,Sweetener,Sugar (brown)
+LEVEL 0,Synthetic Additive,Agar Gum
+LEVEL 3,Synthetic Additive,Ascorbic Acid
+LEVEL 3,Synthetic Additive,Biotin
+LEVEL 3,Synthetic Additive,Calcium Carbonate
+LEVEL 3,Synthetic Additive,Calcium Chloride
+LEVEL 3,Synthetic Additive,Calcium Iodate
+LEVEL 2,Synthetic Additive,Calcium Pantothenate
+LEVEL 0,Synthetic Additive,Calcium Sulfate
+LEVEL 1,Synthetic Additive,Carnitine
+LEVEL 0,Synthetic Additive,Carrageenan
+LEVEL 0,Synthetic Additive,Choline Chloride
+LEVEL 0,Synthetic Additive,Zinc Sulfate
+LEVEL 0,Synthetic Additive,E 306 Natural Tocopherols (vitamin E)
+LEVEL 0,Synthetic Additive,E 307 Alpha
+LEVEL 1,Synthetic Additive,E 308 Synthetic Gamma
+LEVEL 1,Synthetic Additive,E 309 Synthetic Delta
+LEVEL 1,Veg,Asparagus
+LEVEL 2,Veg,Beans (black)
+LEVEL 0,Veg,Beans (chickpea)
+LEVEL 2,Veg,Beans (green)
+LEVEL 3,Veg,Beets
+LEVEL 0,Veg,Bok Choy
+LEVEL 1,Veg,Broccoli
+LEVEL 1,Veg,Brussels Sprouts
+LEVEL 0,Veg,Cabbage
+LEVEL 3,Veg,Carrots
+LEVEL 1,Veg,Cauliflower
+LEVEL 0,Veg,Celery
+LEVEL 3,Veg,Chicory Root
+LEVEL 2,Veg,Chicory Root Extract
+LEVEL 0,Veg,Corn
+LEVEL 0,Veg,Cucumber
+LEVEL 0,Veg,Dandelion Greens
+LEVEL 3,Veg,Pumpkin
+LEVEL 2,Veg,Spinach
+LEVEL 2,Veg,Squash (butternut)
+LEVEL 0,Veg,Squash (zucchini)
+LEVEL 3,Veg,Yam
+LEVEL 3,Veg,Pumpkin
+LEVEL 2,Veg,Spinach
+LEVEL 2,Veg,Squash (butternut)
+LEVEL 0,Veg,Squash (zucchini)
+LEVEL 3,Veg,Yam

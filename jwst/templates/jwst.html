@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% load static %} 
+{% block page_head %}
+<title>JWST</title>
+<link rel="icon" href="{% static 'jwst/favicon.ico' %}" />
+<link rel="stylesheet" href="{% static 'jwst/css/jwst.css' %}" />
+{% endblock %} 
+{% block page_header %}
+<div class="jwst-header" id="jwstHeader">
+    <div class="jwst-name">
+      <h1 class="title-name">James Webb Space Telescope</h1>
+    </div>
+</div>
+{% endblock %} {% block page_content %}
+<div class="jwst-section">
+  <div class="jwst-row-info" id="jwstDisplay">
+    <div class="jwst-col-info">
+      <div class="jwst-col-info">
+        <h3>INSTRUMENTS IN USE</h3>
+        <div>Symbols here...</div>
+      </div>
+      <div class="jwst-col-info">
+        <h3>START TIME / ELAPSED / REMAINING</h3>
+        <div>2022-06-13T03:13:13Z / 00/00:00:00 / 00/04:52:56</div>
+      </div>
+    </div>
+    <svg width="250" height="250" id="jwstSVG"></svg>
+    <div class="jwst-col-info">
+      <div class="jwst-col-info">
+        <h3>TARGET NAME</h3>
+        <div>Stuff here...</div>
+      </div>
+      <div class="jwst-col-info">
+        <h3>CATEGORY / KEYWORDS</h3>
+        <div>Stuff here...</div>
+      </div>
+    </div>
+    <div class="jwst-col-info"></div>
+  </div>
+  <div class="jwst-col-info" id="jwstInfo"></div>
+</div>
+{% endblock %}
+{% block page_scripts %}
+<script type="text/javascript" src="{% static 'jwst/js/jwst.js' %}"></script>
+{% endblock %}

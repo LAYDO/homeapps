@@ -1,0 +1,287 @@
+level,category,food
+2,Dairy,Cheese (american)
+0,Dairy,Cheese (cheddar)
+0,Dairy,Cheese (cottage)
+3,Dairy,Cheese (swiss)
+3,Dairy,Milk (cow)
+2,Dairy,Milk (goat)
+3,Dairy,Yogurt (plain Greek)
+1,Dairy,Yogurt (plain)
+3,Fat,Almond Oil
+0,Fat,Beef Fat
+1,Fat,Canola Oil
+3,Fat,Chicken Fat
+3,Fat,Coconut Oil
+3,Fat,Cod Liver Oil
+2,Fat,Hemp Seed Oil
+3,Fat,Herring Oil
+0,Fat,Olive Oil
+0,Fat,Pork Fat
+1,Fat,Salmon Oil
+2,Fat,Sardine Oil
+3,Fat,Sesame Oil
+0,Fat,Soybean Oil
+2,Fruit,Strawberries
+3,Fruit,Tomato Pomace
+2,Fruit,Watermelons
+1,Grain,Barley
+0,Grain,Brewers Rice
+0,Grain,Corn Meal
+0,Grain,Flaxseed
+3,Grain,Ground Yellow Corn
+1,Grain,Millet
+3,Grain,Oat
+0,Grain,Oat Groats
+3,Grain,Pearled Barley
+0,Grain,Quinoa
+2,Grain,Quinoa Powder
+3,Grain,Rice (brown)
+1,Grain,Rice (white)
+2,Grain,Rice Bran
+2,Grain,Rice Flour
+3,Grain,Rye
+3,Grain,Soy Flour
+2,Grain,Soy Grits
+0,Grain,Wheat Flour
+2,Misc,Tapioca Starch
+0,Misc,Vinegar (apple cider)
+2,Misc,Yeast
+0,Misc,Yeast Culture
+3,Misc,Yucca Schidigera Extract
+2,Nuts,Almond
+0,Nuts,Cashew Nuts
+2,Nuts,Peanut Butter
+0,Nuts,Peanuts
+0,Nuts,Sunflower Seeds
+2,Protein,Alfalfa Meal Concentrate
+0,Protein,Alfalfa Nutrient Concentrate
+0,Protein,Alligator
+0,Protein,Alligator Meal
+1,Protein,Bacon
+3,Protein,Beef
+3,Protein,Beef Broth
+2,Protein,Beef Heart
+2,Protein,Beef Hide
+0,Protein,Beef Jerky
+0,Protein,Beef Kidney
+2,Protein,Beef Liver
+3,Protein,Elk
+0,Protein,Goat
+0,Protein,Goose
+1,Protein,Kangaroo
+3,Protein,Lamb
+2,Protein,Lamb Meal
+3,Protein,Pea Protein
+0,Protein,Pheasant
+0,Protein,Pheasant Gizzard
+0,Protein,Pheasant Heart
+0,Protein,Pheasant Liver
+1,Protein,Pork
+2,Protein,Pork Heart
+0,Protein,Pork Kidney
+0,Protein,Pork Liver
+0,Protein,Pork Meal
+0,Protein,Pork Skins
+3,Protein,Quail
+3,Protein,Rabbit
+0,Protein,Rabbit Heart
+1,Protein,Rabbit Liver
+0,Protein,Rabbit Meal
+2,Seafood,Lobster
+0,Seafood,Mackerel
+0,Seafood,Menhaden Fish Meal
+0,Seafood,Mussels
+1,Seafood,Ocean Fish Meal
+0,Seafood,Oyster
+1,Seafood,Salmon
+1,Seafood,Salmon Meal
+3,Seafood,Sardine
+2,Seafood,Sardine Meal
+0,Seafood,Sea Bass
+0,Seafood,Shrimp
+3,Seafood,Sole
+2,Seafood,Tilapia
+2,Seafood,Trout
+3,Seafood,Tuna
+2,Seafood,Whitefish Meal
+1,Spice,Basil
+2,Spice,Cilantro
+1,Spice,Fenugreek Seed
+2,Spice,Ginger
+1,Spice,Oregano Powder
+0,Synthetic Additive,Citric Acid
+0,Synthetic Additive,Copper Sulfate
+1,Synthetic Additive,Dicalcium Phosphate
+1,Synthetic Additive,Ferrous Sulfate
+0,Synthetic Additive,Folic Acid
+0,Synthetic Additive,Glucosamine Hydrochloride
+2,Synthetic Additive,Guar Gum
+0,Synthetic Additive,Inositol
+0,Synthetic Additive,Inulin
+0,Synthetic Additive,Lecithins
+0,Synthetic Additive,Manganese Proteinate
+0,Synthetic Additive,Manganese Sulfate
+0,Synthetic Additive,Niacin
+1,Synthetic Additive,Omega 3 Fatty Acid
+2,Synthetic Additive,Phosphoric Acid
+0,Synthetic Additive,Potassium Chloride
+3,Synthetic Additive,Pyridoxine Hydrochloride
+3,Synthetic Additive,Riboflavin
+0,Synthetic Additive,Sodium Chloride
+1,Synthetic Additive,Sodium Selenate
+3,Synthetic Additive,Soy Lecithin
+1,Synthetic Additive,Taurine
+2,Veg,Greens (collard)
+3,Veg,Lentils
+0,Veg,Peas
+0,Veg,Potato (yellow)
+0,Veg,Potatoes (sweet)
+3,Veg,Potatoes (white)
+2,Veg,Greens (collard)
+3,Veg,Lentils
+0,Veg,Peas
+0,Veg,Potato (yellow)
+0,Veg,Potatoes (sweet)
+3,Veg,Potatoes (white)
+0,Fat,Sunflower Oil
+1,Fat,Vegetable Oil
+0,Food Dye,Blue #1
+2,Food Dye,Blue #2
+0,Food Dye,Caramel Color
+3,Food Dye,Red #40
+0,Food Dye,Yellow #5
+2,Food Dye,Yellow #6
+1,Fruit,Apple
+0,Fruit,Bananas
+0,Fruit,Blueberries
+2,Fruit,Cantaloupe
+3,Fruit,Cranberries
+0,Fruit,Figs
+0,Fruit,Honeydew Melon
+3,Fruit,Kiwis
+3,Fruit,Mango
+0,Fruit,Oranges
+0,Fruit,Peaches
+3,Fruit,Pears
+1,Fruit,Pineapples
+1,Fruit,Raspberries
+3,Grain,Wheat Gluten
+3,Grain,Wheat Middlings
+2,Grain,Whole Grain Sorghum
+3,Misc,Alfalfa
+1,Misc,Alfalfa (dehydrated)
+0,Misc,Barley Grass
+0,Misc,Bee Pollen
+0,Misc,Brewers Yeast
+0,Misc,Catnip
+2,Misc,Chia Seeds
+3,Misc,Chlorella
+2,Misc,Gelatin
+0,Misc,Hemp
+2,Misc,Kelp
+1,Misc,Lactobacillus Acidophilus
+0,Misc,Pea Fiber
+1,Misc,Potato Flour
+2,Misc,Potato Starch
+1,Misc,Powdered Cellulose
+2,Misc,Psyllium Seed Husk
+1,Misc,Spirulina
+1,Misc,Tapioca
+2,Protein,Beef Meal
+3,Protein,Beef Tallow
+1,Protein,Bison
+2,Protein,Bison Meal
+0,Protein,Bone Meal
+0,Protein,Canola Meal
+2,Protein,Chicken
+0,Protein,Chicken Broth
+1,Protein,Chicken By Product
+1,Protein,Chicken Heart
+3,Protein,Chicken Liver
+1,Protein,Chicken Meal
+0,Protein,Duck
+1,Protein,Duck Gizzard
+0,Protein,Duck Liver
+1,Protein,Duck Meal
+3,Protein,Egg White (chicken)
+2,Protein,Egg White (duck)
+0,Protein,Egg White (quail)
+1,Protein,Egg Yolk (chicken)
+1,Protein,Egg Yolk (duck)
+0,Protein,Egg Yolk (quail)
+0,Protein,Soy Protein Concentrate
+0,Protein,Soy Protein Isolate
+2,Protein,Soybean Meal
+0,Protein,Turkey
+1,Protein,Turkey Broth
+2,Protein,Turkey Gizzard
+2,Protein,Turkey Heart
+0,Protein,Turkey Liver
+1,Protein,Turkey Meal
+0,Protein,Veal
+0,Protein,Venison
+2,Protein,Venison Meal
+2,Seafood,Anchovy
+3,Seafood,Anchovy Meal
+0,Seafood,Catfish
+0,Seafood,Catfish Meal
+0,Seafood,Crab
+0,Seafood,Fish Broth
+0,Seafood,Fish Meal
+0,Seafood,Halibut
+2,Seafood,Herring
+0,Seafood,Herring Meal
+2,Spice,Parsley
+2,Spice,Parsley Flakes
+2,Spice,Rosemary
+0,Spice,Rosemary Extract
+2,Spice,Sage
+3,Spice,Thyme
+0,Spice,Turmeric
+0,Sweetener,High Fructose Corn Syrup
+3,Sweetener,Honey
+0,Sweetener,Sucrose
+3,Sweetener,Sugar (brown)
+0,Synthetic Additive,Agar Gum
+3,Synthetic Additive,Ascorbic Acid
+3,Synthetic Additive,Biotin
+3,Synthetic Additive,Calcium Carbonate
+3,Synthetic Additive,Calcium Chloride
+3,Synthetic Additive,Calcium Iodate
+2,Synthetic Additive,Calcium Pantothenate
+0,Synthetic Additive,Calcium Sulfate
+1,Synthetic Additive,Carnitine
+0,Synthetic Additive,Carrageenan
+0,Synthetic Additive,Choline Chloride
+0,Synthetic Additive,Zinc Sulfate
+0,Synthetic Additive,E 306 Natural Tocopherols (vitamin E)
+0,Synthetic Additive,E 307 Alpha
+1,Synthetic Additive,E 308 Synthetic Gamma
+1,Synthetic Additive,E 309 Synthetic Delta
+1,Veg,Asparagus
+2,Veg,Beans (black)
+0,Veg,Beans (chickpea)
+2,Veg,Beans (green)
+3,Veg,Beets
+0,Veg,Bok Choy
+1,Veg,Broccoli
+1,Veg,Brussels Sprouts
+0,Veg,Cabbage
+3,Veg,Carrots
+1,Veg,Cauliflower
+0,Veg,Celery
+3,Veg,Chicory Root
+2,Veg,Chicory Root Extract
+0,Veg,Corn
+0,Veg,Cucumber
+0,Veg,Dandelion Greens
+3,Veg,Pumpkin
+2,Veg,Spinach
+2,Veg,Squash (butternut)
+0,Veg,Squash (zucchini)
+3,Veg,Yam
+3,Veg,Pumpkin
+2,Veg,Spinach
+2,Veg,Squash (butternut)
+0,Veg,Squash (zucchini)
+3,Veg,Yam

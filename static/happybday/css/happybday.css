@@ -1,0 +1,43 @@
+.happybday-header {
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    background-color: black;
+}
+
+.title-name {
+    line-height: 1;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 5rem;
+    color: gold;
+    margin: 0;
+}
+
+.happybday-app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+#happyBirthdayApp {
+    height: 125%;
+    background-image: url('../img/B-Lemonade.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.happybday-arrow {
+    color: gold;
+    font-size: 5rem;
+    margin-right: 2rem;
+}
+.happybday-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin-top: 25rem;
+}

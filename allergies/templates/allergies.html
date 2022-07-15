@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% load static %} 
+{% block page_head %}
+<title>Apollo Allergies</title>
+<link rel="icon" href="{% static 'iss/favicon.ico' %}" />
+<link rel="stylesheet" href="{% static 'allergies/css/allergies.css' %}" />
+{% endblock %} 
+{% block page_header %}
+<div class="allergies-header" id="issHeader">
+    <div class="allergies-name">
+      <h1 class="title-name">Apollo's Allergies</h1>
+    </div>
+</div>
+{% endblock %} {% block page_content %}
+<div class="allergies-app">
+  <div class="allergies-section allergies-start" id="controlPanel">
+    <span id="allergiesToggle" class="allergies-control fas fa-minus" onclick="showAllergies()"></span>
+    <span id="allergiesFilter" class="allergies-control fas fa-filter" onclick="getLevelAllergies()"></span>
+    <span id="allergiesCheck" class="allergies-control fas fa-spinner"></span>
+  </div>
+  <div class="allergies-section" id="allergyTable">
+  </div>
+  <div class="allergies-section allergies-start" id="ingredientSection">
+    <div class="allergies-instructions">
+      Please enter the ingredients of food, comma separated
+    </div>
+    <textarea id="ingredientInput" rows="10" cols="50"></textarea>
+    <button onclick="checkAllergies()">Check 'Em</button>
+    <br><br>
+    <div class="allergies-section" id="recipeTable"></div>
+  </div>
+</div>
+{% endblock %}
+{% block page_scripts %}
+<script type="text/javascript" src="{% static 'allergies/js/allergies.js' %}"></script>
+{% endblock %}

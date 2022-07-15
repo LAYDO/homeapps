@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% load static %} 
+{% block page_head %}
+<title>Happy Birthday</title>
+<link rel="icon" href="{% static 'iss/favicon.ico' %}" />
+<link rel="stylesheet" href="{% static 'happybday/css/happybday.css' %}" />
+{% endblock %} 
+{% block page_header %}
+<div class="happybday-header" id="issHeader">
+</div>
+{% endblock %} {% block page_content %}
+<div class="happybday-app" id="happyBirthdayApp">
+    <div class="happybday-content">
+        <span class="fas fa-arrow-left happybday-arrow" onclick="openFullscreen()"></span>
+        <h1 class="title-name">Happy Belated Birthday Olaie!</h1>
+    </div>
+</div>
+{% endblock %}
+{% block page_scripts %}
+<script type="text/javascript" src="{% static 'happybday/js/happybday.js' %}"></script>
+{% endblock %}

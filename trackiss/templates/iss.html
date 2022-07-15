@@ -1,0 +1,51 @@
+{% extends "base.html" %} {% load static %} 
+{% block page_head %}
+<title>Track ISS</title>
+<link rel="icon" href="{% static 'iss/favicon.ico' %}" />
+<link rel="stylesheet" href="{% static 'iss/css/iss.css' %}" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+crossorigin=""></script>
+{% endblock %} 
+{% block page_header %}
+<div class="iss-header" id="issHeader">
+    <div class="iss-name">
+      <h1 class="title-name">International Space Station</h1>
+    </div>
+</div>
+{% endblock %} {% block page_content %}
+<div class="iss-section">
+  <div id="issMap"></div>
+  <div class="iss-sec-info">
+    <div class="iss-info">
+      <h2>Latitude</h2>
+      <div id="issLat">--</div>
+    </div>
+    <div class="iss-info">
+      <h2>Longitude</h2>
+      <div id="issLon">--</div>
+    </div>
+
+    <div class="iss-info">
+      <h2>Altitude</h2>
+      <div id="issAlt">--</div>
+    </div>
+    <div class="iss-info">
+      <h2>Velocity</h2>
+      <div id="issVel">--</div>
+    </div>
+    <div class="iss-button">
+      <button class="metric" onclick="checkMetric()" id="metricCheck">Metric</button>
+      <!-- <h2>Metric</h2>
+      <input type="checkbox" id="metricCheck" name="metricCheck"> -->
+    </div>
+  </div>
+  <!-- <button class="iss-button" onclick="fetchISS()">ISS Position</button> -->
+</div>
+{% endblock %}
+{% block page_scripts %}
+<script type="text/javascript" src="{% static 'iss/js/iss.js' %}"></script>
+{% endblock %}
