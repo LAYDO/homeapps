@@ -10,6 +10,7 @@ let timeTitles = document.getElementById('timeTitles');
 let targetName = document.getElementById('targetName');
 let startTimeTimes = document.getElementById('startTimeTimes');
 let categoryKeywords = document.getElementById('categoryKeywords');
+let instruments = document.getElementById('instruments');
 let a = 25;
 let longD = 2 * a;
 let shortD = Math.sqrt(3) * a;
@@ -218,8 +219,9 @@ function buildTargetDisplay(data, now) {
         let countdown = generateDiffString(d, now);
 
         targetName.innerText = target['TARGET NAME'];
-        startTimeTimes.innerText = `${d.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })} / ${current ? elapsed : countdown} / ${current ? remaining : target['DURATION']}`;
-        categoryKeywords.innerText = `${target["CATEGORY"]} / ${target["KEYWORDS"]}`;
+        startTimeTimes.innerText = `${d.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })} \n ${current ? elapsed : countdown} \n ${current ? remaining : target['DURATION']}`;
+        categoryKeywords.innerText = `${target["CATEGORY"]} \n ${target["KEYWORDS"]}`;
+        instruments.innerText = `${target["SCIENCE INSTRUMENT AND MODE"]}`;
     }
 }
 

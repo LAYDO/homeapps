@@ -13,28 +13,29 @@
 {% endblock %} {% block page_content %}
 <div class="jwst-section">
   <div class="jwst-row-info" id="jwstDisplay">
-    <div class="jwst-col-info">
+    <div class="jwst-side-info">
       <div class="jwst-col-info">
         <h3>INSTRUMENTS IN USE</h3>
-        <div id="instruments">Symbols here...</div>
+        <div id="instruments">--</div>
       </div>
       <div class="jwst-col-info">
-        <h3 id="timeTitles">TIMES</h3>
-        <div id="startTimeTimes"></div>
+        <h3 id="timeTitles">SCHEDULE</h3>
+        <div class="info-sec" id="startTimeTimes">--</div>
       </div>
     </div>
-    <svg width="250" height="250" id="jwstSVG"></svg>
-    <div class="jwst-col-info">
+    <div class="jwst-wrapper">
+      <svg width="250" height="250" id="jwstSVG"></svg>
+    </div>
+    <div class="jwst-side-info">
       <div class="jwst-col-info">
         <h3 id="targetTitle">TARGET NAME</h3>
-        <div id="targetName">Stuff here...</div>
+        <div id="targetName">--</div>
       </div>
       <div class="jwst-col-info">
         <h3>CATEGORY / KEYWORDS</h3>
-        <div id="categoryKeywords">Stuff here...</div>
+        <div class="info-sec" id="categoryKeywords">--</div>
       </div>
     </div>
-    <div class="jwst-col-info"></div>
   </div>
   <div class="jwst-col-info" id="jwstInfo"></div>
 </div>
