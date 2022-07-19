@@ -5,6 +5,10 @@ window.onload = () => {
 let jwstInfo = document.getElementById('jwstInfo');
 let jwstDisplay = document.getElementById('jwstDisplay');
 let jwstLoad = document.getElementById('jwstLoad');
+let targetTitle = document.getElementById('targetTitle');
+let targetName = document.getElementById('targetName');
+let startTimeTimes = document.getElementById('startTimeTimes');
+let categoryKeywords = document.getElementById('categoryKeywords');
 let a = 25;
 let longD = 2 * a;
 let shortD = Math.sqrt(3) * a;
@@ -20,7 +24,7 @@ function init() {
         // console.log(data);
         buildJWST();
         buildTable(data);
-        displayCurrent(data);
+        setInterval(displayCurrent(data), 2000);
         toggleLoad(0);
     }).catch(error => {
         console.error('There has been a problem with your fetch operation: ', error);
@@ -157,27 +161,41 @@ function buildJWST() {
 function displayCurrent(data) {
     let i = 0;
     let now = Date.now();
-    let booyah;
     let dur;
     data.forEach(d => {
         if (d['SCHEDULED START TIME']) {
             let booyah = new Date(d['SCHEDULED START TIME']);
-            if (d['DURATION']) {
-                let dayDiff = d['DURATION'].split("/");
-                if (dayDiff[1]) {
-                    let dayInDiff = dayDiff[1].split(":");
-                    dur = new Date((dayDiff[0] * 24 * 3600 * 1000) + (dayInDiff[0] * 3600 * 1000) + (dayInDiff[1] * 60 * 1000) + (dayInDiff[2] * 1000));
-                    if (now > booyah) {
-                        i++;
-                    }
-                }
+            if (now > booyah) {
+                i++;
             }
         }
     });
-    if (now > booyah && (now < booyah + dur)) {
-        console.log(`Current: ${JSON.stringify(data[i - 1])}`);
+    let target = data[i - 1];
+    let booyahh = new Date(target['SCHEDULED START TIME']);
+    if (target['DURATION']) {
+        let dayDiff = target['DURATION'].split("/");
+        if (dayDiff[1]) {
+            let dayInDiff = dayDiff[1].split(":");
+            // console.log(`${dayDiff[0]} ${dayInDiff}`);
+            dur = ((dayDiff[0] * 24 * 3600) + (dayInDiff[0] * 3600) + (dayInDiff[1] * 60) + (dayInDiff[2])) * 10;
+        }
+    }
+    let b = (booyahh.getTime() + dur);
+    let bDate = new Date(b);
+    // console.log(bDate);
+    if (now > booyahh && now < bDate) {
+        console.log(`Current: ${JSON.stringify(data[i])}`);
+        targetTitle.innerText = "CURRENT TARGET NAME";
     } else {
         console.log(`Previous: ${JSON.stringify(data[i - 1])}`);
         console.log(`Next One: ${JSON.stringify(data[i])}`);
+        targetTitle.innerText = "NEXT TARGET NAME";
     }
+    d = new Date(data[i - 1]["SCHEDULED START TIME"]);
+    diff = (now - d);
+
+
+    targetName.innerText = data[i - 1]['TARGET NAME'];
+    startTimeTimes.innerText = `${d.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })} / ${diff} / ${data[i - 1]["DURATION"]}`;
+    categoryKeywords.innerText = `${data[i - 1]["CATEGORY"]} / ${data[i - 1]["KEYWORDS"]}`;
 }
