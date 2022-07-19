@@ -72,3 +72,9 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+#jwst {
+    background-image: url('/static/jwst/img/jwst.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

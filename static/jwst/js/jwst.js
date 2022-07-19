@@ -24,9 +24,9 @@ function init() {
         return response.json();
     }).then(data => {
         // console.log(data);
-        setInterval(determineTarget.bind(null, data), 1000);
         buildJWST();
         buildTable(data);
+        setInterval(determineTarget.bind(null, data), 1000);
         toggleLoad(0);
     }).catch(error => {
         console.error('There has been a problem with your fetch operation: ', error);
@@ -46,6 +46,7 @@ function toggleLoad(load) {
 }
 
 function buildTable(data) {
+    let now = Date.now();
     let jwstTable = document.createElement('table');
     let headers = document.createElement('tr');
     let colArr = Object.keys(data[0]);
@@ -63,6 +64,24 @@ function buildTable(data) {
             cell.innerText = d[e];
             dataRow.append(cell);
         });
+        let target = d;
+        if (target) {
+            let dayDiff = target['DURATION'].split("/");
+            if (dayDiff[1]) {
+                let dayInDiff = dayDiff[1].split(":");
+                dur = ((dayDiff[0] * 24 * 3600) + (dayInDiff[0] * 3600) + (dayInDiff[1] * 60) + (dayInDiff[2])) * 10;
+            }
+            let start = new Date(target["SCHEDULED START TIME"]);
+            let newTime = (start.getTime() + dur);
+            let endTime = new Date(newTime);
+
+            if (now > start && now < endTime) {
+                dataRow.style.fontWeight = 'bold';
+            } else if (now > start && now > endTime) {
+                dataRow.style.color = '#999999';
+            }
+
+        }
         jwstTable.append(dataRow);
     });
     jwstInfo.append(jwstTable);

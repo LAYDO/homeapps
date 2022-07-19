@@ -1,0 +1,21 @@
+<svg width="250" height="250" viewbox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="100,1 87.5,22.6506 100,44.3013 125,44.3013 137.5,26 125,1" style="fill: gold; stroke: black; stroke-width: 3px;"></polygon>
+    <polygon points="100,44.3013 87.5,65.9519 100,87.6025 125,87.6025 137.5,69.3013 125,44.3013" style="fill: gold; stroke: black; stroke-width: 3px;"></polygon>
+    <polygon points="100,87.6025 87.5,109.253 100,130.904 125,130.904 137.5,112.603 125,87.6025" style="fill: transparent; stroke: black; stroke-width: 3px;"></polygon>
+    <polygon points="100,130.904 87.5,152.554 100,174.205 125,174.205 137.5,155.904 125,130.904" style="fill: gold; stroke: black; stroke-width: 3px;"></polygon>
+    <polygon points="100,174.205 87.5,195.856 100,217.506 125,217.506 137.5,199.205 125,174.205" style="fill: gold; stroke: black; stroke-width: 3px;"></polygon>
+    <polygon points="62.5,22 50,43.6506 62.5,65.3013 87.5,65.3013 100,47 87.5,22" style="fill: gold; stroke: black; stroke-width: 3px;"></polygon>
+    <polygon points="62.5,65.3013 50,86.9519 62.5,108.603 87.5,108.603 100,90.3013 87.5,65.3013" style="fill: gold; stroke: black; stroke-width: 3px;"></polygon>
+    <polygon points="62.5,108.603 50,130.253 62.5,151.904 87.5,151.904 100,133.603 87.5,108.603" style="fill: gold; stroke: black; stroke-width: 3px;"></polygon>
+    <polygon points="62.5,151.904 50,173.554 62.5,195.205 87.5,195.205 100,176.904 87.5,151.904" style="fill: gold; stroke: black; stroke-width: 3px;"></polygon>
+    <polygon points="137.5,22 125,43.6506 137.5,65.3013 162.5,65.3013 175,47 162.5,22" style="fill: gold; stroke: black; stroke-width: 3px;"></polygon>
+    <polygon points="137.5,65.3013 125,86.9519 137.5,108.603 162.5,108.603 175,90.3013 162.5,65.3013" style="fill: gold; stroke: black; stroke-width: 3px;"></polygon>
+    <polygon points="137.5,108.603 125,130.253 137.5,151.904 162.5,151.904 175,133.603 162.5,108.603" style="fill: gold; stroke: black; stroke-width: 3px;"></polygon>
+    <polygon points="137.5,151.904 125,173.554 137.5,195.205 162.5,195.205 175,176.904 162.5,151.904" style="fill: gold; stroke: black; stroke-width: 3px;"></polygon>
+    <polygon points="25,43 12.5,64.6506 25,86.3013 50,86.3013 62.5,68 50,43" style="fill: gold; stroke: black; stroke-width: 3px;"></polygon>
+    <polygon points="25,86.3013 12.5,107.952 25,129.603 50,129.603 62.5,111.301 50,86.3013" style="fill: gold; stroke: black; stroke-width: 3px;"></polygon>
+    <polygon points="25,129.603 12.5,151.253 25,172.904 50,172.904 62.5,154.603 50,129.603" style="fill: gold; stroke: black; stroke-width: 3px;"></polygon>
+    <polygon points="175,43 162.5,64.6506 175,86.3013 200,86.3013 212.5,68 200,43" style="fill: gold; stroke: black; stroke-width: 3px;"></polygon>
+    <polygon points="175,86.3013 162.5,107.952 175,129.603 200,129.603 212.5,111.301 200,86.3013" style="fill: gold; stroke: black; stroke-width: 3px;"></polygon>
+    <polygon points="175,129.603 162.5,151.253 175,172.904 200,172.904 212.5,154.603 200,129.603" style="fill: gold; stroke: black; stroke-width: 3px;"></polygon>
+</svg>
