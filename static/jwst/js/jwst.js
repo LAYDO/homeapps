@@ -163,7 +163,7 @@ function determineTarget(data) {
     let loop = true;
     let i = 0;
     let target;
-
+    // https://stackoverflow.com/questions/34846814/correct-way-to-break-out-of-if-statement-within-for-loop
     while (loop && i < data.length) {
         let dur;
         let t = data[i];
