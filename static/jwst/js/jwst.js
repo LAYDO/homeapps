@@ -22,9 +22,9 @@ function init() {
         return response.json();
     }).then(data => {
         // console.log(data);
+        setInterval(determineTarget.bind(null, data), 1000);
         buildJWST();
         buildTable(data);
-        setInterval(displayCurrent(data), 2000);
         toggleLoad(0);
     }).catch(error => {
         console.error('There has been a problem with your fetch operation: ', error);
@@ -158,44 +158,73 @@ function buildJWST() {
     }
 }
 
-function displayCurrent(data) {
-    let i = 0;
+function determineTarget(data) {
     let now = Date.now();
-    let dur;
-    data.forEach(d => {
-        if (d['SCHEDULED START TIME']) {
-            let booyah = new Date(d['SCHEDULED START TIME']);
-            if (now > booyah) {
+    let loop = true;
+    let i = 0;
+    let target;
+
+    while (loop && i < data.length) {
+        let dur;
+        let t = data[i];
+        if (t['SCHEDULED START TIME']) {
+            let dayDiff = t['DURATION'].split("/");
+            if (dayDiff[1]) {
+                let dayInDiff = dayDiff[1].split(":");
+                dur = ((dayDiff[0] * 24 * 3600) + (dayInDiff[0] * 3600) + (dayInDiff[1] * 60) + (dayInDiff[2])) * 10;
+            }
+            let startTime = new Date(t['SCHEDULED START TIME']);
+            let newTime = (startTime.getTime() + dur);
+            let endTime = new Date(newTime);
+            if ((now > startTime && now < endTime) || (now < startTime && now < endTime)) {
+                if (now > startTime && now < endTime) {
+                    targetTitle.innerText = "CURRENT TARGET NAME";
+                } else {
+                    targetTitle.innerText = "NEXT TARGET NAME";
+                }
+                target = t
+                loop = false;
+            } else {
                 i++;
             }
         }
-    });
-    let target = data[i - 1];
-    let booyahh = new Date(target['SCHEDULED START TIME']);
-    if (target['DURATION']) {
+    }
+    buildTargetDisplay(target, now);
+}
+
+function buildTargetDisplay(data, now) {
+
+    let target = data;
+    if (target) {
         let dayDiff = target['DURATION'].split("/");
         if (dayDiff[1]) {
             let dayInDiff = dayDiff[1].split(":");
-            // console.log(`${dayDiff[0]} ${dayInDiff}`);
             dur = ((dayDiff[0] * 24 * 3600) + (dayInDiff[0] * 3600) + (dayInDiff[1] * 60) + (dayInDiff[2])) * 10;
         }
+        d = new Date(target["SCHEDULED START TIME"]);
+        let newTime = (d.getTime() + dur);
+        let endTime = new Date(newTime);
+        
+        let elapsed = generateDiffString(now, d);
+        let remaining = generateDiffString(endTime, now);
+    
+        targetName.innerText = target['TARGET NAME'];
+        startTimeTimes.innerText = `${d.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })} / ${elapsed} / ${remaining}`;
+        categoryKeywords.innerText = `${target["CATEGORY"]} / ${target["KEYWORDS"]}`;
     }
-    let b = (booyahh.getTime() + dur);
-    let bDate = new Date(b);
-    // console.log(bDate);
-    if (now > booyahh && now < bDate) {
-        console.log(`Current: ${JSON.stringify(data[i])}`);
-        targetTitle.innerText = "CURRENT TARGET NAME";
-    } else {
-        console.log(`Previous: ${JSON.stringify(data[i - 1])}`);
-        console.log(`Next One: ${JSON.stringify(data[i])}`);
-        targetTitle.innerText = "NEXT TARGET NAME";
-    }
-    d = new Date(data[i - 1]["SCHEDULED START TIME"]);
-    diff = (now - d);
+}
 
-
-    targetName.innerText = data[i - 1]['TARGET NAME'];
-    startTimeTimes.innerText = `${d.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })} / ${diff} / ${data[i - 1]["DURATION"]}`;
-    categoryKeywords.innerText = `${data[i - 1]["CATEGORY"]} / ${data[i - 1]["KEYWORDS"]}`;
+function generateDiffString(x, y) {
+        diff = Math.abs(x - y);
+        diff = Math.round(diff / 1000);
+        let secs = diff % 60;
+        // console.log(`${diff} ${secs}`)
+        secs = ('0' + secs).slice(-2);
+        diff = Math.floor(diff / 60);
+        let mins = diff % 60;
+        mins = ('0' + mins).slice(-2);
+        diff = Math.floor(diff / 60);
+        let hours = diff % 24;
+        hours = ('0' + hours).slice(-2);
+        return `${hours}h ${mins}m ${secs}s`;
 }
