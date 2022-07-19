@@ -20,9 +20,11 @@ function init() {
         // console.log(data);
         buildJWST();
         buildTable(data);
+        displayCurrent(data);
         toggleLoad(0);
     }).catch(error => {
         console.error('There has been a problem with your fetch operation: ', error);
+        buildJWST();
         toggleLoad(0);
     })
 }
@@ -152,3 +154,30 @@ function buildJWST() {
     }
 }
 
+function displayCurrent(data) {
+    let i = 0;
+    let now = Date.now();
+    let booyah;
+    let dur;
+    data.forEach(d => {
+        if (d['SCHEDULED START TIME']) {
+            let booyah = new Date(d['SCHEDULED START TIME']);
+            if (d['DURATION']) {
+                let dayDiff = d['DURATION'].split("/");
+                if (dayDiff[1]) {
+                    let dayInDiff = dayDiff[1].split(":");
+                    dur = new Date((dayDiff[0] * 24 * 3600 * 1000) + (dayInDiff[0] * 3600 * 1000) + (dayInDiff[1] * 60 * 1000) + (dayInDiff[2] * 1000));
+                    if (now > booyah) {
+                        i++;
+                    }
+                }
+            }
+        }
+    });
+    if (now > booyah && (now < booyah + dur)) {
+        console.log(`Current: ${JSON.stringify(data[i - 1])}`);
+    } else {
+        console.log(`Previous: ${JSON.stringify(data[i - 1])}`);
+        console.log(`Next One: ${JSON.stringify(data[i])}`);
+    }
+}
