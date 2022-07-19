@@ -4,6 +4,7 @@ from django.shortcuts import render
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import re
 
 baseURL = 'https://www.stsci.edu'
 schedURL = "/jwst/science-execution/observing-schedules"
@@ -44,13 +45,16 @@ def getSchedules(request):
         # print(d)
         for item in d:
             l = len(schedule.items())
+            matchObj = re.search(r"([0-9]+:[0-9]+:[0-9])", str(item['VISIT ID']))
+            # if not matchObj:
+            #     print(item['VISIT ID'])
             if item['VISIT ID'] == '-------------':
                 print(item)
             elif item['VISIT ID'] == 'COORDINATED PARALLEL':
                 schedule[f'item{str(l - 1).rjust(3,"0")}']["SCIENCE INSTRUMENT AND MODE"] = schedule[f'item{str(l - 1).rjust(3,"0")}']["SCIENCE INSTRUMENT AND MODE"] + f', {item["PCS MODE"]}'
                 schedule[f'item{str(l - 1).rjust(3,"0")}']["VISIT TYPE"] = schedule[f'item{str(l - 1).rjust(3,"0")}']["VISIT TYPE"] + f', {item["VISIT ID"]}'
                 lList[l - 1] = schedule[f'item{str(l - 1).rjust(3,"0")}']
-            elif l > 0 and str(item['VISIT ID']).split("-")[0] == str(schedule[f'item{str(l - 1).rjust(3,"0")}']['TARGET NAME']).split("-")[0]:
+            elif l > 0 and not matchObj: # str(item['VISIT ID']).split("-")[0] == str(schedule[f'item{str(l - 1).rjust(3,"0")}']['TARGET NAME']).split("-")[0]:
                 schedule[f'item{str(l - 1).rjust(3,"0")}']["TARGET NAME"] = schedule[f'item{str(l - 1).rjust(3,"0")}']["TARGET NAME"] + f', {item["VISIT ID"]}'
                 schedule[f'item{str(l - 1).rjust(3,"0")}']["CATEGORY"] = schedule[f'item{str(l - 1).rjust(3,"0")}']["CATEGORY"] + f', {item["PCS MODE"]}'
                 schedule[f'item{str(l - 1).rjust(3,"0")}']["KEYWORDS"] = schedule[f'item{str(l - 1).rjust(3,"0")}']["KEYWORDS"] + f', {item["VISIT TYPE"]}'

@@ -18,8 +18,6 @@ function init() {
         return response.json();
     }).then(data => {
         // console.log(data);
-        let squiz = new Date();
-        console.log(squiz.getUTCDate());
         buildJWST();
         buildTable(data);
         toggleLoad(0);
