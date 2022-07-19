@@ -38,3 +38,26 @@
     font-size: 0.75rem;
     overflow-y: auto;
 }
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.25;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.current {
+    animation-name: blink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: blink;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+}

@@ -6,6 +6,7 @@ let jwstInfo = document.getElementById('jwstInfo');
 let jwstDisplay = document.getElementById('jwstDisplay');
 let jwstLoad = document.getElementById('jwstLoad');
 let targetTitle = document.getElementById('targetTitle');
+let timeTitles = document.getElementById('timeTitles');
 let targetName = document.getElementById('targetName');
 let startTimeTimes = document.getElementById('startTimeTimes');
 let categoryKeywords = document.getElementById('categoryKeywords');
@@ -177,11 +178,6 @@ function determineTarget(data) {
             let newTime = (startTime.getTime() + dur);
             let endTime = new Date(newTime);
             if ((now > startTime && now < endTime) || (now < startTime && now < endTime)) {
-                if (now > startTime && now < endTime) {
-                    targetTitle.innerText = "CURRENT TARGET NAME";
-                } else {
-                    targetTitle.innerText = "NEXT TARGET NAME";
-                }
                 target = t
                 loop = false;
             } else {
@@ -193,7 +189,7 @@ function determineTarget(data) {
 }
 
 function buildTargetDisplay(data, now) {
-
+    let current = false;
     let target = data;
     if (target) {
         let dayDiff = target['DURATION'].split("/");
@@ -204,27 +200,40 @@ function buildTargetDisplay(data, now) {
         d = new Date(target["SCHEDULED START TIME"]);
         let newTime = (d.getTime() + dur);
         let endTime = new Date(newTime);
-        
+
+        if (now > d && now < endTime) {
+            targetTitle.innerText = "CURRENT TARGET NAME";
+            timeTitles.innerText = "START TIME / ELAPSED / REMAINING";
+            document.getElementById('jwstSVG').classList = 'current';
+            current = true;
+        } else {
+            targetTitle.innerText = "NEXT TARGET NAME";
+            timeTitles.innerText = "START TIME / COUNTDOWN / DURATION";
+            document.getElementById('jwstSVG').classList = '';
+            current = false;
+        }
+
         let elapsed = generateDiffString(now, d);
         let remaining = generateDiffString(endTime, now);
-    
+        let countdown = generateDiffString(d, now);
+
         targetName.innerText = target['TARGET NAME'];
-        startTimeTimes.innerText = `${d.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })} / ${elapsed} / ${remaining}`;
+        startTimeTimes.innerText = `${d.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })} / ${current ? elapsed : countdown} / ${current ? remaining : target['DURATION']}`;
         categoryKeywords.innerText = `${target["CATEGORY"]} / ${target["KEYWORDS"]}`;
     }
 }
 
 function generateDiffString(x, y) {
-        diff = Math.abs(x - y);
-        diff = Math.round(diff / 1000);
-        let secs = diff % 60;
-        // console.log(`${diff} ${secs}`)
-        secs = ('0' + secs).slice(-2);
-        diff = Math.floor(diff / 60);
-        let mins = diff % 60;
-        mins = ('0' + mins).slice(-2);
-        diff = Math.floor(diff / 60);
-        let hours = diff % 24;
-        hours = ('0' + hours).slice(-2);
-        return `${hours}h ${mins}m ${secs}s`;
+    diff = Math.abs(x - y);
+    diff = Math.round(diff / 1000);
+    let secs = diff % 60;
+    // console.log(`${diff} ${secs}`)
+    secs = ('0' + secs).slice(-2);
+    diff = Math.floor(diff / 60);
+    let mins = diff % 60;
+    mins = ('0' + mins).slice(-2);
+    diff = Math.floor(diff / 60);
+    let hours = diff % 24;
+    hours = ('0' + hours).slice(-2);
+    return `${hours}h ${mins}m ${secs}s`;
 }
