@@ -10,7 +10,8 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     padding: 2rem;
-    height: 100%;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .app-claim {
@@ -57,6 +58,9 @@ body {
     flex-direction: row;
     justify-content: center;
     padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 #iss {
@@ -72,6 +76,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 #jwst {
     background-image: url('/static/jwst/img/jwst.svg');
     background-position: center;
