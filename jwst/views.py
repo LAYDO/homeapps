@@ -48,7 +48,7 @@ def getSchedules(request):
             matchObj = re.search(r"([0-9]+:[0-9]+:[0-9])", str(item['VISIT ID']))
             # if not matchObj:
             #     print(item['VISIT ID'])
-            if item['VISIT ID'] == '-------------':
+            if item['VISIT ID'] == '-------------' or item['SCHEDULED START TIME'] == '^ATTACHED TO PRIME^':
                 print(item)
             elif item['VISIT ID'] == 'COORDINATED PARALLEL':
                 schedule[f'item{str(l - 1).rjust(3,"0")}']["SCIENCE INSTRUMENT AND MODE"] = schedule[f'item{str(l - 1).rjust(3,"0")}']["SCIENCE INSTRUMENT AND MODE"] + f', {item["PCS MODE"]}'
