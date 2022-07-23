@@ -17,7 +17,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 0.125rem solid green;
+    /* border: 0.125rem solid green; */
+    height: 92%;
 }
 
 .jwst-col-info {
@@ -39,14 +40,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    height: 100%;
 }
 
 .jwst-row-info {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 100%;
+    width: 100%;
 }
 
 #jwstInfo {
@@ -79,4 +81,18 @@
 
 .info-sec {
     text-align: center;
+    font-size: 1.5rem;
 }
+
+#jwstDisplay {
+    height: 100%;
+}
+
+#jwstCurrent h3 {
+    font-size: 2rem;
+}
+
+/* #jwstInfo th {
+    position: sticky;
+    top: 0;
+} */

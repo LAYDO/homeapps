@@ -12,34 +12,36 @@
 </div>
 {% endblock %} {% block page_content %}
 <div class="jwst-section">
-  <div style="border: 0.125rem solid red; width: 100%; height: 50rem;">
-    <div class="jwst-row-info" id="jwstDisplay">
-      <div class="jwst-side-info">
-        <div class="jwst-col-info">
-          <h3>INSTRUMENTS IN USE</h3>
-          <div id="instruments">--</div>
-        </div>
-        <div class="jwst-col-info">
-          <h3 id="timeTitles">SCHEDULE</h3>
-          <div class="info-sec" id="startTimeTimes">--</div>
-        </div>
-      </div>
-      <div class="jwst-wrapper">
+  <div style="width: 100%;">
+    <div class="jwst-col-info" id="jwstDisplay">
+      <div class="jwst-wrapper" id="jwstIcon">
         <svg width="250" height="250" id="jwstSVG"></svg>
       </div>
-      <div class="jwst-side-info">
-        <div class="jwst-col-info">
-          <h3 id="targetTitle">TARGET NAME</h3>
-          <div id="targetName">--</div>
+      <div class="jwst-row-info" id="jwstCurrent">
+        <div class="jwst-side-info">
+          <div class="jwst-col-info">
+            <h3 id="targetTitle">TARGET NAME</h3>
+            <div class="info-sec" id="targetName">--</div>
+          </div>
+          <div class="jwst-col-info">
+            <h3>CATEGORIES</h3>
+            <div class="info-sec" id="categoryKeywords">--</div>
+          </div>
         </div>
-        <div class="jwst-col-info">
-          <h3>CATEGORY / KEYWORDS</h3>
-          <div class="info-sec" id="categoryKeywords">--</div>
+        <div class="jwst-side-info">
+          <div class="jwst-col-info">
+            <h3>INSTRUMENTS</h3>
+            <div class="info-sec" id="instruments">--</div>
+          </div>
+          <div class="jwst-col-info">
+            <h3 id="timeTitles">SCHEDULE</h3>
+            <div class="info-sec" id="startTimeTimes">--</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div style="border: 0.125rem solid blue; width: 100%; overflow-y: auto;">
+  <div style="width: 100%; overflow-y: auto;">
     <div class="jwst-col-info" id="jwstInfo"></div>
   </div>
 </div>

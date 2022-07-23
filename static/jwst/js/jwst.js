@@ -55,6 +55,8 @@ function buildTable(data) {
         column.innerText = key;
         headers.append(column);
     });
+    // headers.style.position = 'sticky';
+    // headers.style.top = 0;
     jwstTable.append(headers);
     data.forEach(d => {
         let dataRow = document.createElement('tr');
@@ -220,25 +222,23 @@ function buildTargetDisplay(data, now) {
         d = new Date(target["SCHEDULED START TIME"]);
         let newTime = (d.getTime() + dur);
         let endTime = new Date(newTime);
-
-        if (now > d && now < endTime) {
-            targetTitle.innerText = "CURRENT TARGET NAME";
-            timeTitles.innerText = "START TIME / ELAPSED / REMAINING";
-            document.getElementById('jwstSVG').classList = 'current';
-            current = true;
-        } else {
-            targetTitle.innerText = "NEXT TARGET NAME";
-            timeTitles.innerText = "START TIME / COUNTDOWN / DURATION";
-            document.getElementById('jwstSVG').classList = '';
-            current = false;
-        }
-
         let elapsed = generateDiffString(now, d);
         let remaining = generateDiffString(endTime, now);
         let countdown = generateDiffString(d, now);
 
+        if (now > d && now < endTime) {
+            targetTitle.innerText = "CURRENT TARGET";
+            document.getElementById('jwstSVG').classList = 'current';
+            current = true;
+        } else {
+            targetTitle.innerText = "NEXT TARGET";
+            document.getElementById('jwstSVG').classList = '';
+            current = false;
+        }
+
+
+        startTimeTimes.innerText = `START: ${d.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })} \n - ${current ? elapsed : countdown} \n + ${current ? remaining : target['DURATION']}`;
         targetName.innerText = target['TARGET NAME'];
-        startTimeTimes.innerText = `${d.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })} \n ${current ? elapsed : countdown} \n ${current ? remaining : target['DURATION']}`;
         categoryKeywords.innerText = `${target["CATEGORY"]} \n ${target["KEYWORDS"]}`;
         instruments.innerText = `${target["SCIENCE INSTRUMENT AND MODE"]}`;
     }
