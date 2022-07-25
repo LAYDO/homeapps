@@ -8,6 +8,7 @@ let jwstLoad = document.getElementById('jwstLoad');
 let targetTitle = document.getElementById('targetTitle');
 let timeTitles = document.getElementById('timeTitles');
 let targetName = document.getElementById('targetName');
+let iterateTarget = document.getElementById('iterateTarget');
 let startTimeTimes = document.getElementById('startTimeTimes');
 let categoryKeywords = document.getElementById('categoryKeywords');
 let instruments = document.getElementById('instruments');
@@ -28,6 +29,7 @@ function init() {
         buildTable(data);
         setInterval(determineTarget.bind(null, data), 1000);
         toggleLoad(0);
+        scrolls();
     }).catch(error => {
         console.error('There has been a problem with your fetch operation: ', error);
         buildJWST();
@@ -38,34 +40,35 @@ function init() {
 function toggleLoad(load) {
     if (load) {
         jwstDisplay.style.visibility = 'hidden';
-        jwstInfo.style.visibility = 'hidden';
     } else {
         jwstDisplay.style.visibility = 'visible';
-        jwstInfo.style.visibility = 'visible';
     }
 }
 
 function buildTable(data) {
     let now = Date.now();
-    let jwstTable = document.createElement('table');
-    let headers = document.createElement('tr');
-    let colArr = Object.keys(data[0]);
-    colArr.forEach((key) => {
-        let column = document.createElement('th');
-        column.innerText = key;
-        headers.append(column);
-    });
-    // headers.style.position = 'sticky';
-    // headers.style.top = 0;
-    jwstTable.append(headers);
     data.forEach(d => {
-        let dataRow = document.createElement('tr');
-        let elements = Object.keys(d);
-        elements.forEach(e => {
-            let cell = document.createElement('td');
-            cell.innerText = d[e];
-            dataRow.append(cell);
-        });
+        let item = document.createElement('div');
+        item.classList = 'item';
+        let times = document.createElement('div');
+        times.classList = 'times';
+        let timesDuration = document.createElement('div');
+        timesDuration.innerText = d['DURATION'];
+        let timesStart = document.createElement('div');
+        let tStart = new Date(d['SCHEDULED START TIME']);
+        timesStart.innerText = tStart.toLocaleString("en-US", { timeZone: "America/Los_Angeles" });
+        times.append(timesStart);
+        times.append(timesDuration);
+        item.append(times);
+        let targetDiv = document.createElement('div');
+        targetDiv.classList = 'target';
+        let targetName = document.createElement('div');
+        targetName.innerText = d['TARGET NAME'];
+        let targetInstuments = document.createElement('div');
+        targetInstuments.innerText = d['SCIENCE INSTRUMENT AND MODE'];
+        targetDiv.append(targetName);
+        targetDiv.append(targetInstuments);
+        item.append(targetDiv);
         let target = d;
         if (target) {
             let dayDiff = target['DURATION'].split("/");
@@ -78,15 +81,16 @@ function buildTable(data) {
             let endTime = new Date(newTime);
 
             if (now > start && now < endTime) {
-                dataRow.style.fontWeight = 'bold';
+                item.style.fontWeight = 'bold';
+                item.style.background = 'gold';
+                item.id = 'scrollToItem';
             } else if (now > start && now > endTime) {
-                dataRow.style.color = '#999999';
+                item.style.color = '#999999';
             }
 
         }
-        jwstTable.append(dataRow);
+        iterateTarget.append(item);
     });
-    jwstInfo.append(jwstTable);
 }
 
 function buildJWST() {
@@ -179,6 +183,12 @@ function buildJWST() {
         poly.style.strokeWidth = 3;
         svg.append(poly);
     }
+    document.getElementById('jwstIcon').addEventListener('click', scrolls);
+}
+
+function scrolls() {
+    let s = document.getElementById('scrollToItem');
+    s.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 }
 
 function determineTarget(data) {
@@ -236,10 +246,10 @@ function buildTargetDisplay(data, now) {
             current = false;
         }
 
-
+        let noCategories = (target['CATEGORY'] == 'null' && target['KEYWORDS'] == 'null');
         startTimeTimes.innerText = `START: ${d.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })} \n - ${current ? elapsed : countdown} \n + ${current ? remaining : target['DURATION']}`;
         targetName.innerText = target['TARGET NAME'];
-        categoryKeywords.innerText = `${target["CATEGORY"]} \n ${target["KEYWORDS"]}`;
+        categoryKeywords.innerText = noCategories ? `${target["CATEGORY"]} \n ${target["KEYWORDS"]}` : "None provided";
         instruments.innerText = `${target["SCIENCE INSTRUMENT AND MODE"]}`;
     }
 }
