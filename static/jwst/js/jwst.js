@@ -29,7 +29,7 @@ function init() {
         setInterval(determineTarget.bind(null, data), 1000);
         buildJWST();
         toggleLoad(0);
-        // scrolls();
+        scrolls();
     }).catch(error => {
         console.error('There has been a problem with your fetch operation: ', error);
         buildJWST();
@@ -47,7 +47,8 @@ function toggleLoad(load) {
 
 function buildTable(data, target) {
     let now = Date.now();
-    data.forEach(d => {
+    let targetHit = false;
+    data.forEach((d, idx) => {
         let item = document.createElement('div');
         item.classList = 'item';
         let times = document.createElement('div');
@@ -69,30 +70,13 @@ function buildTable(data, target) {
         targetDiv.append(targetName);
         targetDiv.append(targetInstuments);
         item.append(targetDiv);
-        item.style.color = '#999999';
-        // let target = d;
         if (d == target) {
-            // let dayDiff = target['DURATION'].split("/");
-            // if (dayDiff[1]) {
-            //     let dayInDiff = dayDiff[1].split(":");
-            //     dur = ((dayDiff[0] * 24 * 3600) + (dayInDiff[0] * 3600) + (dayInDiff[1] * 60) + (dayInDiff[2])) * 10;
-            // }
-            // let start = new Date(target["SCHEDULED START TIME"]);
-            // let newTime = (start.getTime() + dur);
-            // let endTime = new Date(newTime);
-
-            // if (now > start && now < endTime) {
-            //     item.style.fontWeight = 'bold';
-            //     item.style.background = 'gold';
-            //     item.id = 'scrollToItem';
-            // } else if (now > start && now > endTime) {
-            //     item.style.color = '#999999';
-            // }
             item.style.fontWeight = 'bold';
             item.style.background = 'gold';
             item.id = 'scrollToItem';
-
+            targetHit = true;
         }
+        item.style.color = targetHit ? 'black' : '#999999';
         iterateTarget.append(item);
     });
 }
