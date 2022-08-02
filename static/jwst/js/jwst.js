@@ -21,20 +21,24 @@ class JWSTTelescope {
         this.shortD = Math.sqrt(3) * this.a;
         this.halfA = this.a / 2;
         this.scrollTarget;
+        this.targetNode;
     }
 
 
     init() {
         let url = `${window.location.href}fetch`;
-        console.log(url);
         this.fetchData(url);
     }
 
-    async fetchData(url) {
+    fetchData(url) {
         fetch(url).then(response => {
             this.toggleLoad(1);
+            if (!response.ok) {
+                throw new Error('Network response was not OK');
+            }
             return response.json();
         }).then(data => {
+            this.buildTable(data);
             setInterval(this.determineTarget.bind(this, data), 1000);
             this.buildJWST();
             this.toggleLoad(0);
@@ -43,6 +47,7 @@ class JWSTTelescope {
             console.error('There has been a problem with your fetch operation: ', error);
             this.buildJWST();
             this.toggleLoad(0);
+            return false;
         });
     }
 
@@ -149,14 +154,14 @@ class JWSTTelescope {
     }
 
     scrolls() {
-        let s = document.getElementById('scrollToItem');
-        console.log(s);
-        if (s) {
-            s.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+        let s = document.getElementsByClassName('scrollToItem');
+        // console.log(s);
+        if (s && s.length == 1) {
+            s[0].scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
         }
     }
 
-    determineTarget(data) {
+    async determineTarget(data) {
         let now = Date.now();
         let loop = true;
         let i = 0;
@@ -176,19 +181,20 @@ class JWSTTelescope {
                 let endTime = new Date(newTime);
                 if ((now > startTime && now < endTime) || (now < startTime && now < endTime)) {
                     target = t
+                    this.targetNode = i;
+                    this.scrollTarget = t;
                     loop = false;
                 } else {
                     i++;
                 }
             }
         }
-        this.buildTable(data, target, now);
         this.buildTargetDisplay(target, now);
+        this.formatTable(data, target, now);
     }
 
-    buildTable(data, target, now) {
-        let targetHit = false;
-        data.forEach(d => {
+    buildTable(data) {
+        data.forEach((d, idx) => {
             let item = document.createElement('div');
             item.classList = 'item';
             let times = document.createElement('div');
@@ -210,16 +216,7 @@ class JWSTTelescope {
             targetDiv.append(targetName);
             targetDiv.append(targetInstuments);
             item.append(targetDiv);
-            if (d == target) {
-                item.style.fontWeight = 'bold';
-                if (now > tStart && now < this.calculateEndTime(d)) {
-                    item.style.background = 'gold';
-                }
-                item.id = 'scrollToItem';
-                targetHit = true;
-                this.scrollTarget = item;
-            }
-            item.style.color = targetHit ? 'black' : '#999999';
+            item.id = `target${("00" + idx).slice(-3)}`;
             this.iterateTarget.append(item);
         });
     }
@@ -285,5 +282,28 @@ class JWSTTelescope {
         let newTime = (startTime.getTime() + dur);
         return new Date(newTime);
 
+    }
+
+    formatTable(data, target, now) {
+        now = new Date(now);
+        let targetHit = false;
+        for (let i = 0; i < data.length; i++) {
+            let tth = document.getElementById(`target${("00" + i).slice(-3)}`);
+            let tStart = new Date(data[i]['SCHEDULED START TIME']);
+            tth.classList.remove('scrollToItem');
+            tth.style.background = 'white';
+            tth.style.fontWeight = 'normal';
+            if (data[i] == target) {
+                if (!tth.classList.contains('scrollToItem')) {
+                    tth.classList.add('scrollToItem');
+                }
+                if (now > tStart && now < this.calculateEndTime(data[i])) {
+                    tth.style.background = 'gold';
+                }
+                tth.style.fontWeight = 'bold';
+                targetHit = true;
+            }
+            tth.style.color = targetHit ? 'black' : '#999999';
+        }
     }
 }
