@@ -38,16 +38,16 @@ class JWSTTelescope {
             }
             return response.json();
         }).then(data => {
+            console.log(data);
             this.buildTable(data);
             setInterval(this.determineTarget.bind(this, data), 1000);
             this.buildJWST();
             this.toggleLoad(0);
-            return true;
+            this.scrolls();
         }).catch(error => {
             console.error('There has been a problem with your fetch operation: ', error);
             this.buildJWST();
             this.toggleLoad(0);
-            return false;
         });
     }
 
@@ -251,7 +251,7 @@ class JWSTTelescope {
             let noCategories = (target['CATEGORY'] == 'null' && target['KEYWORDS'] == 'null');
             this.startTimeTimes.innerText = `${current ? "STARTED:" : "START:"} ${d.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })} \n - ${current ? elapsed : countdown} \n + ${current ? remaining : target['DURATION']}`;
             this.targetName.innerText = target['TARGET NAME'];
-            this.categoryKeywords.innerText = noCategories ? `${target["CATEGORY"]} \n ${target["KEYWORDS"]}` : "None provided";
+            this.categoryKeywords.innerText = !noCategories ? `${target["CATEGORY"]} \n ${target["KEYWORDS"]}` : "None provided";
             this.instruments.innerText = `${target["SCIENCE INSTRUMENT AND MODE"]}`;
         }
     }
