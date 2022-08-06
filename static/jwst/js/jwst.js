@@ -27,6 +27,7 @@ class JWSTTelescope {
 
     init() {
         let url = `${window.location.href}fetch`;
+        this.buildJWST();
         this.fetchData(url);
     }
 
@@ -38,45 +39,73 @@ class JWSTTelescope {
             }
             return response.json();
         }).then(data => {
-            console.log(data);
+            // console.log(data);
             this.buildTable(data);
             setInterval(this.determineTarget.bind(this, data), 1000);
-            this.buildJWST();
             this.toggleLoad(0);
-            this.scrolls();
         }).catch(error => {
             console.error('There has been a problem with your fetch operation: ', error);
-            this.buildJWST();
             this.toggleLoad(0);
         });
     }
-
-    toggleLoad(load) {
-        if (load) {
-            this.jwstDisplay.style.visibility = 'hidden';
-        } else {
-            this.jwstDisplay.style.visibility = 'visible';
-        }
-    }
-
 
     buildJWST() {
         let svg = document.getElementById('jwstSVG');
         let startX = 100;
         let startY = 1;
         let ppa = [[startX, startY], [startX - this.halfA, startY + (this.shortD / 2)], [startX, startY + this.shortD], [startX + this.a, startY + this.shortD], [startX + (1.5 * this.a), startY + this.a], [startX + this.a, startY]];
-        // Center column
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 19; i++) {
             let poly = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+            let diffX;
+            let diffY;
             for (let value of ppa) {
                 let point = svg.createSVGPoint();
-                let diffY = i * this.shortD;
-                let diffX = 0;
+                switch (i) {
+                    case 0:
+                    case 1:
+                    case 2:
+                        diffY = i * this.shortD;
+                        diffX = 2 * (this.a + this.halfA); // 78;
+                        point.y = value[1] + 42 + diffY;
+                        break;
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                        diffY = (i - 3) * this.shortD;
+                        diffX = this.a + this.halfA; // 39
+                        point.y = value[1] + 21 + diffY;
+                        break;
+                    case 7:
+                    case 8:
+                    case 9:
+                    case 10:
+                    case 11:
+                        diffY = (i - 7) * this.shortD;
+                        diffX = 0;
+                        point.y = value[1] + diffY;
+                        break;
+                    case 12:
+                    case 13:
+                    case 14:
+                    case 15:
+                        diffY = (i - 12) * this.shortD;
+                        diffX = -(this.a + this.halfA); // -39;
+                        point.y = value[1] + 21 + diffY;
+                        break;
+                    case 16:
+                    case 17:
+                    case 18:
+                        diffY = (i - 16) * this.shortD;
+                        diffX = -2 * (this.a + this.halfA); // -78;
+                        point.y = value[1] + 42 + diffY;
+                        break;
+                }
                 point.x = value[0] - diffX;
-                point.y = value[1] + diffY;
                 poly.points.appendItem(point);
             }
-            if (i == 2) {
+            poly.id = `tile${i}`;
+            if (i == 9) {
                 poly.style.fill = 'transparent';
             } else {
                 poly.style.fill = 'gold';
@@ -84,73 +113,24 @@ class JWSTTelescope {
             poly.style.stroke = 'black';
             poly.style.strokeWidth = 3;
             svg.append(poly);
-        }
-        // Center-left column
-        for (let i = 0; i < 4; i++) {
-            let poly = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-            for (let value of ppa) {
-                let point = svg.createSVGPoint();
-                let diffY = i * this.shortD;
-                let diffX = this.a + this.halfA; // 39
-                point.x = value[0] - diffX;
-                point.y = value[1] + 21 + diffY;
-                poly.points.appendItem(point);
-            }
-            poly.style.fill = 'gold';
-            poly.style.stroke = 'black';
-            poly.style.strokeWidth = 3;
-            svg.append(poly);
-        }
-        // Center-right column
-        for (let i = 0; i < 4; i++) {
-            let poly = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-            for (let value of ppa) {
-                let point = svg.createSVGPoint();
-                let diffY = i * this.shortD;
-                let diffX = -(this.a + this.halfA); // -39;
-                point.x = value[0] - diffX;
-                point.y = value[1] + 21 + diffY;
-                poly.points.appendItem(point);
-            }
-            poly.style.fill = 'gold';
-            poly.style.stroke = 'black';
-            poly.style.strokeWidth = 3;
-            svg.append(poly);
-        }
 
-        // Left column
-        for (let i = 0; i < 3; i++) {
-            let poly = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-            for (let value of ppa) {
-                let point = svg.createSVGPoint();
-                let diffY = i * this.shortD;
-                let diffX = 2 * (this.a + this.halfA); // 78;
-                point.x = value[0] - diffX;
-                point.y = value[1] + 42 + diffY;
-                poly.points.appendItem(point);
-            }
-            poly.style.fill = 'gold';
-            poly.style.stroke = 'black';
-            poly.style.strokeWidth = 3;
-            svg.append(poly);
-        }
-        // Right column
-        for (let i = 0; i < 3; i++) {
-            let poly = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-            for (let value of ppa) {
-                let point = svg.createSVGPoint();
-                let diffY = i * this.shortD;
-                let diffX = -2 * (this.a + this.halfA); // -78;
-                point.x = value[0] - diffX;
-                point.y = value[1] + 42 + diffY;
-                poly.points.appendItem(point);
-            }
-            poly.style.fill = 'gold';
-            poly.style.stroke = 'black';
-            poly.style.strokeWidth = 3;
-            svg.append(poly);
         }
         document.getElementById('jwstIcon').addEventListener('click', this.scrolls);
+    }
+
+    toggleLoad(load) {
+        // while (load) {
+        //     let i = Math.floor(Math.random() * 20);
+        //     let tile = document.getElementById(`tile${i}`);
+        //     if (tile) {
+        //         tile.classList = 'current';
+        //     }
+        // }
+        if (load) {
+            this.jwstDisplay.style.visibility = 'hidden';
+        } else {
+            this.jwstDisplay.style.visibility = 'visible';
+        }
     }
 
     scrolls() {
