@@ -8,6 +8,7 @@ class JWSTTelescope {
 
         this.jwstInfo = document.getElementById('jwstInfo');
         this.jwstDisplay = document.getElementById('jwstDisplay');
+        this.jwstCurrent = document.getElementById('jwstCurrent');
         this.jwstLoad = document.getElementById('jwstLoad');
         this.targetTitle = document.getElementById('targetTitle');
         this.timeTitles = document.getElementById('timeTitles');
@@ -32,8 +33,8 @@ class JWSTTelescope {
     }
 
     fetchData(url) {
+        this.toggleLoad(1);
         fetch(url).then(response => {
-            this.toggleLoad(1);
             if (!response.ok) {
                 throw new Error('Network response was not OK');
             }
@@ -119,17 +120,25 @@ class JWSTTelescope {
     }
 
     toggleLoad(load) {
-        // while (load) {
-        //     let i = Math.floor(Math.random() * 20);
-        //     let tile = document.getElementById(`tile${i}`);
-        //     if (tile) {
-        //         tile.classList = 'current';
-        //     }
-        // }
+        let jwst;
         if (load) {
-            this.jwstDisplay.style.visibility = 'hidden';
+            this.jwstCurrent.style.visibility = 'hidden';
+            jwst = setInterval(function () {
+                let i = Math.floor(Math.random() * 20);
+                let tile = document.getElementById(`tile${i}`);
+                if (tile) {
+                    tile.classList = 'current';
+                }
+            }, 250);
+            setTimeout(function () { clearInterval(jwst); }, 5000);
         } else {
-            this.jwstDisplay.style.visibility = 'visible';
+            this.jwstCurrent.style.visibility = 'visible';
+            for (let x = 0; x < 20; x++) {
+                let tile = document.getElementById(`tile${x}`);
+                if (tile) {
+                    tile.classList = '';
+                }
+            }
         }
     }
 

@@ -18,7 +18,7 @@
     justify-content: center;
     align-items: center;
     /* border: 0.125rem solid green; */
-    height: 92%;
+    height: 90%;
 }
 
 .jwst-col-info {
@@ -86,8 +86,11 @@
 }
 
 #jwstDisplay {
-    visibility: hidden;
     height: 100%;
+}
+
+#jwstCurrent {
+    visibility: hidden;
 }
 
 #jwstCurrent h3 {
@@ -106,38 +109,37 @@
     border: 0.125rem solid black;
     min-height: 7rem;
     width: 99%;
+    padding: 0.125rem;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.25rem;
+    border-radius: 1rem;
+}
+
+.times {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 0.125rem solid red; */
+    width: 35%;
+    height: 100%;
+}
+
+.target {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 0.125rem solid blue; */
+    width: 65%;
+    height: 100%;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    .item {
-        /* height: 40rem; */
-        width: 99%;
-        margin-top: 0.25rem;
-        display: flex;
-        flex-direction: row;
-        padding: 0.125rem;
-    }
 
-    .times {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        /* border: 0.125rem solid red; */
-        width: 35%;
-        height: 100%;
-        font-size: 2rem;
-    }
-
+    .times,
     .target {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        /* border: 0.125rem solid blue; */
-        width: 65%;
-        height: 100%;
         font-size: 2rem;
     }
-
 }
