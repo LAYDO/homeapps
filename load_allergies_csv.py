@@ -1,8 +1,8 @@
 import psycopg2
 
-conn = psycopg2.connect(database="homeapps",
-                        user='laydo', password='drew758Met340^', 
-                        host='localhost', port=''
+conn = psycopg2.connect(database="db-homeapps",
+                        user='db-homeapps', password='AVNS_kpxHjdjfUrcAUAXdtXS', 
+                        host='app-d5b8f5dc-2445-442e-8922-2f65c211bcb1-do-user-12113309-0.b.db.ondigitalocean.com', port='25060'
 )
 
 conn.autocommit = True
