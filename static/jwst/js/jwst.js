@@ -130,7 +130,7 @@ class JWSTTelescope {
                     tile.classList = 'current';
                 }
             }, 250);
-            setTimeout(function () { clearInterval(jwst); }, 5500);
+            setTimeout(function () { clearInterval(jwst); }, 6000);
         } else {
             this.jwstCurrent.style.visibility = 'visible';
             for (let x = 0; x < 20; x++) {
